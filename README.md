@@ -1,5 +1,4 @@
 # Phython
 
-
-- python -m venv venv 
-- 
+- python -m venv venv
+- win -- .\venv\Scripts\aсtivate

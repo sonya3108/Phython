@@ -12,7 +12,7 @@ put_text(''' Жив собі в лісі зайчисько малий,
 
 plans = input_pw('Введіть ваші плани на літо:')
 
-put_text(f'Кількість символів у ваших планах на літо:')
+put_text(f'Кількість символів у ваших планах на літо: gggg')
 
 img = open('images.jpg', 'rb').read()
 put_image(img, width='500px')

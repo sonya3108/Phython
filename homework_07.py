@@ -7,4 +7,3 @@ def get_area_of_rectangle(side_number_1, side_number_2):
     area_of_rectangle = side_number_1 * side_number_2
     return area_of_rectangle
 get_area_of_rectangle (side_number_1:3, side_number_2:5)
-

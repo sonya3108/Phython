@@ -1,4 +1,3 @@
-# Вхідні дані
 ticket_price = 500
 num_people = 4
 taxi_to = 600

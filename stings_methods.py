@@ -1,21 +1,23 @@
-
+# Вхідні дані
 ticket_price = 500
-
-
-taxi_to_park = 600
-taxi_from_park = taxi_to_park * 1.2
-
-
+num_people = 4
+taxi_to = 600
+taxi_back = taxi_to * 1.2
 pizza_price = 250
-discount_percentage = 15
-discount_amount = pizza_price * (discount_percentage / 100)
-final_pizza_price = pizza_price - discount_amount
+num_pizzas = 2
+pizza_discount = 0.15
+air_hockey_price = 80
+num_games = 8
 
 
-air_hockey_price = 8 * 80
+total_tickets = ticket_price * num_people
+total_taxi = taxi_to + taxi_back
+total_pizza = (pizza_price * num_pizzas) * (1 - pizza_discount)
+total_air_hockey = air_hockey_price * num_games
+
+total_cost = total_tickets + total_taxi + total_pizza + total_air_hockey
+cost_per_person = total_cost / num_people
+
+print(cost_per_person)
 
 
-total_cost = (ticket_price + taxi_to_park + taxi_from_park + (2 * final_pizza_price) + air_hockey_price) / 4
-
-
-print("Кожен з вас повинен заплатити:", total_cost, "гривень")

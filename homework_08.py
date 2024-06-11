@@ -1,12 +1,12 @@
 from pywebio import start_server
-from pywebio.input import input, input_group, TEXT, NUMBER, DATE
+from pywebio.input import input, input_group,  TEXT, NUMBER, DATE
 from pywebio.output import put_text, put_image, put_html
 
 
-def quiz():
+def main():
     total_score = 0
 
-    name = input("Введіть ваше ім'я:", type=TEXT)
+    name = input("Введіть ваше ім'я:", )
 
     questions = [
         {
@@ -28,11 +28,6 @@ def quiz():
             'question': 'Якого року США проголосили незалежність?',
             'type': NUMBER,
             'answer': 1776
-        },
-        {
-            'question': 'Введіть сьогоднішню дату:',
-            'type': DATE,
-            'answer': None
         }
     ]
 
@@ -50,4 +45,4 @@ def quiz():
 
 
 if __name__ == '__main__':
-    start_server(quiz, port=8080)
+    start_server(main, port=8080)

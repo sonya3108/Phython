@@ -25,13 +25,14 @@ async def get_animals():
 
 @app.get("/get_venomous_care_cost/")
 async def get_venomous_care_cost():
-    cost = sum(animal.care_cost for animal in zoo if animal.is_venomous)
+    cost = sum(animal.care_cost * animal.count for animal in zoo if animal.is_venomous)
     return {"venomous_care_cost": cost}
 
 @app.get("/get_african_animals_count/")
 async def get_african_animals_count():
     count = sum(animal.count for animal in zoo if animal.continent.lower() == "africa")
     return {"african_animals_count": count}
+
 
 import requests
 
@@ -52,7 +53,6 @@ def get_venomous_care_cost():
 def get_african_animals_count():
     response = requests.get(f"{BASE_URL}/get_african_animals_count/")
     return response.json()
-
 
 animals = [
     {

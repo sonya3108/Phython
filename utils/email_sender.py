@@ -1,3 +1,5 @@
+import os
+from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
@@ -29,6 +31,14 @@ def send_email(
     # text_to_send = MIMEText(mail_body, 'plain')
     text_to_send = MIMEText(mail_body, 'html')
     msg.attach(text_to_send)
+
+    if attachment:
+        is_file_exists = os.path.exists(attachment)
+        if is_file_exists:
+            basename = os.path.basename(attachment)
+            filesize = os.path.getsize(attachment)
+            file = MIMEBase('aplication', f'octet-stream; name={attachment}')
+            file.set_payload(open(attachment, 'br'))
 
     mail = smtplib.SMTP_SSL(SMTP_SERVER)
     mail.login(USER, TOKEN)

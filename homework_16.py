@@ -1,21 +1,22 @@
-import pandas as pd
-
+import csv
 
 file_path = 'airport-codes_csv.csv'
 
+with open(file_path, mode='r', encoding='utf-8') as file:
+    reader = csv.reader(file, delimiter=';')
+    header = next(reader)
 
-try:
-    data = pd.read_csv(file_path, delimiter=';', encoding='utf-8', on_bad_lines='skip')
-except UnicodeDecodeError:
+    name_idx = header.index('name')
+    iso_country_idx = header.index('iso_country')
 
-    data = pd.read_csv(file_path, delimiter=';', encoding='latin1', on_bad_lines='skip')
+    ukraine_airports_names = []
 
+    for row in reader:
+        if row[iso_country_idx] == 'UA':
+            ukraine_airports_names.append(row[name_idx])
 
-ukraine_airports = data[data['iso_country'] == 'UA']
-
-
-ukraine_airports_names = ukraine_airports['name']
-print(ukraine_airports_names)
+for name in ukraine_airports_names:
+    print(name)
 
 
 

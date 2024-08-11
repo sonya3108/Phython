@@ -1,22 +1,20 @@
 import pytest
 
 
-
 def calculate_discounted_price(price, discount):
     """
-    Розраховує ціну після знижки.
+    Calculates the price after applying a discount.
 
-    :param price: Початкова ціна товару.
-    :param discount: Відсоток знижки (від 0 до 100).
-    :return: Ціна після знижки.
+    :param price: Initial price of the item.
+    :param discount: Discount percentage (from 0 to 100).
+    :return: Price after discount.
     """
     if price < 0:
-        raise ValueError("Ціна не може бути меншою за 0.")
+        raise ValueError("Price cannot be less than 0.")
     if discount < 0 or discount > 100:
-        raise ValueError("Знижка повинна бути в межах від 0 до 100 відсотків.")
+        raise ValueError("Discount must be between 0 and 100 percent.")
 
     return price - (price * discount / 100)
-
 
 
 def test_calculate_discounted_price():

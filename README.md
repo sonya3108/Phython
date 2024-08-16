@@ -20,5 +20,5 @@ pytest .
 pytest -v  .
 pytest -v -s  . 
 pytest -v  test_utils.py::TestAddTwoNumbers::test_add_two_combined 
-pytest -v  test_utils.py::TestAddTwoNumbers
+pytest -v  test_utils.py::TestAddTwoNumbers::test_add_two_combined 
 

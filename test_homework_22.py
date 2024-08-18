@@ -89,5 +89,4 @@ class TestLibrary:
         assert books_list == ["'To Kill a Mockingbird' by Harper Lee"]
 
 
-if __name__ == "__main__":
-    main()
+
